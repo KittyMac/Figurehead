@@ -1,6 +1,6 @@
 #define PAMPHLET_PREPROCESSOR
 
-#include <./utility/defines.js>
+#include <./figurehead.html>
 
 #include <./ui/ui.all.js>
 
