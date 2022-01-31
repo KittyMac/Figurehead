@@ -1,6 +1,6 @@
 #define PAMPHLET_PREPROCESSOR
 
-#include <../defines.js>
+#include <../utility/defines.js>
 
 function initButton(div, valueDiv, callback) {
     if (div.length != undefined) {
