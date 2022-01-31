@@ -2,10 +2,10 @@ import Foundation
 
 // swiftlint:disable all
 
-public extension Pamphlet.Figurehead.Utility {
+public extension Pamphlet.Utility {
     static func DefinesJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/utility/defines.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/utility/defines.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -40,10 +40,10 @@ private let uncompressedDefinesJs = ###"""
 """###
 private let compressedDefinesJs = Data(base64Encoded:"H4sIAAAAAAACA+MCAJMG1zIBAAAA")!
 
-public extension Pamphlet.Figurehead.Utility {
+public extension Pamphlet.Utility {
     static func LabaJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/utility/laba.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/utility/laba.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -78,10 +78,10 @@ function StringBuilder(){var a=[];this.length=function(){for(var e=0,t=0;t<a.len
 """###
 private let compressedLabaJs = Data(base64Encoded:"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")!
 
-public extension Pamphlet.Figurehead.Utility {
+public extension Pamphlet.Utility {
     static func NavigationJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/utility/navigation.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/utility/navigation.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -116,10 +116,10 @@ function sendIfModified(e,t,s,n){var i=new XMLHttpRequest;i.onreadystatechange=f
 """###
 private let compressedNavigationJs = Data(base64Encoded:"H4sIAAAAAAACA3WST2+bQBDF7/0UmANipYWQ/pEqWzSHtFZcNU1UiNTrCgbYCs/S3SGORfzdM8REdVRyQWL2997szL6qx4K0Qc8Blpvq2pS60lCGIEk6iWK4V9bTKcLO+33944qo+wV/e3C00rFBC6rcO1IERaOwhrSa7EIxfExTarSLn5lsZIIg/JR8mMqjqncXO42l2cWtKdSoixsLVeqf+cvwfZIsTlFWY9+2ixdX1xl0kMMDBcF/pbgFrKn5kjw+nliMJ0IeXTAIMBzPhBAHycN0gKF/e5PlvuT+YtUCeSZ14BzfKyNjVQ1xDbQh2IZ+dqxHm5LRo6MJAh07oGlBVzw32FekNELOIet2jxjlqubWjaHWKHadJW/5FlvFGJqoUEUDb3DfHjrN+2AwOn8DuRzl0aVBsqZ97TjteX6eTRW9pCTKNBbgS14qeBp5yfxrKm9t7ParInUx6pHDJJbh7BW4OSBF+b5jF191XauPOTj74wyuOFSWVeldvo4+T2Ow3ffs5ie/qNVY62rP7vyC1WmOx/SKwQL1dibY90aXXiIX5wz90zE1vRQbDs8uA3/uHNipvlwkBxmeJBxCceDW754ArfNmEUQDAAA=")!
 
-public extension Pamphlet.Figurehead.Utility {
+public extension Pamphlet.Utility {
     static func TimerJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/utility/timer.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/utility/timer.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -154,10 +154,10 @@ let globalTimers=[];function initTimers(){setInterval(callTimers,250)}function c
 """###
 private let compressedTimerJs = Data(base64Encoded:"H4sIAAAAAAACA2WQPQ+CMBCGd38Fbm1oCDFxERvi6OTiRhgqHHDJ0ZpSWAj/3UYJ1rjd1/O+d0fgopbMQ9Ede7CDLMqsGXXl0OgINbpPmfF5AHfVDuykiFWK1nlxOKZ82YhvwxONsYy8PgmQeiTay9ApD5NTUQqUaUYSCvThGRIC3bouwzjmxAILVddvhhGfQ4nkOQ6dLwbLECi7zVrozQQ3DSykxB9wWS9gv/L+McvuBWHO7TouAQAA")!
 
-public extension Pamphlet.Figurehead.Utility {
+public extension Pamphlet.Utility {
     static func UtilityJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/utility/utility.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/utility/utility.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {

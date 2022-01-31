@@ -2,10 +2,10 @@ import Foundation
 
 // swiftlint:disable all
 
-public extension Pamphlet.Figurehead.Ui {
+public extension Pamphlet.Ui {
     static func UiAlertHtml() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/ui/ui.alert.html"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/ui/ui.alert.html"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -39,10 +39,10 @@ private let uncompressedUiAlertHtml = ###"""
 """###
 private let compressedUiAlertHtml = Data(base64Encoded:"H4sIAAAAAAACAwMAAAAAAAAAAAA=")!
 
-public extension Pamphlet.Figurehead.Ui {
+public extension Pamphlet.Ui {
     static func UiAlertJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/ui/ui.alert.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/ui/ui.alert.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -77,10 +77,10 @@ var alertsQueue=[];function handleAlertsQueue(){var e=function(){1==alertsContai
 """###
 private let compressedUiAlertJs = Data(base64Encoded:"H4sIAAAAAAACA6VUbU8iMRD+fr9CGkPao5LlK5ueQcVoQkQNfCJG6+4Ajd0u1xdyZrP//VqWV11i7kwI6U5nOvM8M88suT7hErQ1Dw4csMlTPHUqsSJXJ3OuUgm93S0mxdL7A9u4eEOHsSr+MleWCwW6LcxwAarZxPUXrNGhA/7K2wlXCciPXqS65Epk3MLHW4qmEaLLXKQnEcV7dXzMZey7hHYqzELyd4ZUrgCVhJCS2l35tgKkWJonLgNl2zOwfQnhePF+m3qHWDkpGyzAiTZQV2S0JaiZnTebnpbDkhVFjVDlrjygPhOsa5qDmM0tw50zS35CmyfWcXmzMrbQ4g+iG8dMqMrMDkNLcoBcQ5Yv4Vrn2T3XvnCsCK1p3Qp8HDVqMJzvoP1DFyP6BedTCR7Nd1rdqW11QEJrKk7mQqaegW1ndvyTYpprXPXaEwvG8BlQ7s+vztpcGSr9OeFSvvLkzVDBxne3D+P+7ZVvrmYIURMAO8bXj591YveLRbE7Y51qiHLGJ+4pNufYhAnXLfbSG/QfR88X49FoePd8ObwbPQ4Hz1f96954MMKnhSgvrDotXElPi7wkL6R7LKjGuQyAhDKeghubfaKWVu+sAn2ECn865PAY5FEMyVEhiBby+VHLkTjZ8sSkR0yTNk/T/tJ7DoSx4JNjlOXOgFscaIAUlZQ8z06HQR1x7bNsX/NKOnLje2CxCBNcavjtwNjeamT8s9eaZ4D3p6PaUEdxkPhQcr6cfDo1YKvPw4mEoOTOV0q231cxfHoUhW0Vfnhfr2Yuphb7+e8GRW839col1EbVluVmMwpcb7SAg/l/djWhVaT1TpZN0PANPW1sIVCxSaVRb90vdeHMHBdrqXWBroXWtXQrs64qa1cVKX/8BT7dLlWYBgAA")!
 
-public extension Pamphlet.Figurehead.Ui {
+public extension Pamphlet.Ui {
     static func UiAllHtml() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/ui/ui.all.html"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/ui/ui.all.html"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -114,10 +114,10 @@ private let uncompressedUiAllHtml = ###"""
 """###
 private let compressedUiAllHtml = Data(base64Encoded:"H4sIAAAAAAACAwMAAAAAAAAAAAA=")!
 
-public extension Pamphlet.Figurehead.Ui {
+public extension Pamphlet.Ui {
     static func UiAllJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/ui/ui.all.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/ui/ui.all.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -152,10 +152,10 @@ function initFieldWithCount(t,e,n){t.updateCounter=function(){var u=t.value.leng
 """###
 private let compressedUiAllJs = Data(base64Encoded:"H4sIAAAAAAACA23NwQrCMBAE0LtfEUoPCZR8gBo8aL0KQfDa0m5NMGxK3K2W0n8Xihelx5nHMB1jQz6i8Ojp7CG0N0/uGBlJUgEFqok0921NsJSQTPedSDUNdRJsSA91YNAB8E5uB9ojQrrCm0yVTzyL2Il8wrkqQD9pDKCbGGIyvDd4yF7OE2TbrLT2Ym15kiqbC9IRPfZM5u99kcbVeIdVesDI/Yr8ZKnmzQdzMqBS+QAAAA==")!
 
-public extension Pamphlet.Figurehead.Ui {
+public extension Pamphlet.Ui {
     static func UiButtonHtml() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/ui/ui.button.html"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/ui/ui.button.html"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -189,10 +189,10 @@ private let uncompressedUiButtonHtml = ###"""
 """###
 private let compressedUiButtonHtml = Data(base64Encoded:"H4sIAAAAAAACAwMAAAAAAAAAAAA=")!
 
-public extension Pamphlet.Figurehead.Ui {
+public extension Pamphlet.Ui {
     static func UiButtonJs() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/ui/ui.button.js"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/ui/ui.button.js"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
@@ -227,10 +227,10 @@ function initButton(n,t,e){if(null!=n.length)for(let t,l=null!=n?n:[],u=0;t=l[u]
 """###
 private let compressedUiButtonJs = Data(base64Encoded:"H4sIAAAAAAACA6WNQQrCQAxF956idlESOhTX1kEQ3HmD4kJsxg7EjHQSN6V3V3Bu4O7De7wfTO4ak1RRop5MNQmIU0e4xABizFsvHZM8dMKQZmDSSh37go6yH67O/K5Xz4N954GL3lvbona3cTy/SfQSs5LQDPUzWSZ71Q5CeQfB5RekpiHQKWZcEXviTJX8k1g3HzfEdyLiAAAA")!
 
-public extension Pamphlet.Figurehead.Ui {
+public extension Pamphlet.Ui {
     static func UiGridHtml() -> String {
     #if DEBUG
-        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/figurehead/ui/ui.grid.html"
+        let fileOnDiskPath = "/Volumes/Development/Development/chimerasw3/Figurehead/Resources/ui/ui.grid.html"
         if let contents = try? String(contentsOf:URL(fileURLWithPath: fileOnDiskPath)) {
             if contents.hasPrefix("#define PAMPHLET_PREPROCESSOR") {
                 do {
