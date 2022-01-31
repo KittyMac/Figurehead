@@ -12,3 +12,13 @@
 #include <./utility/utility.js>
 #include <./utility/navigation.js>
 #include <./utility/timer.js>
+
+function InitFigurehead() {
+    initTimers();
+    
+    function animate() {
+        Laba.update()
+        window.requestAnimationFrame(animate);
+    }
+    animate();
+}
