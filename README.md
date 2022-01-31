@@ -1,2 +1,3 @@
 # Figurehead
-Collection of definition files for HTML5 using Pamphlet
+
+Used by apps which want to generate HTML using the Pamphlet preprocessor.
