@@ -1,4 +1,5 @@
 
-pamphlet:
-	rm -rf ./Sources/Pamphlet
-	time pamphlet --collapse ./Resources/ ./Sources/Pamphlet/
+all:
+	#rsync -av --delete ./Resources/public/figurehead/ ./dist/public/figurehead
+	rsync -av --delete ./Resources/private/figurehead/ ./dist/private/figurehead
+
