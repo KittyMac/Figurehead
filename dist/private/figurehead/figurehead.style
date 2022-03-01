@@ -43,6 +43,8 @@
         
         --fh-btn-background: rgba(66,147,247,1);
         --fh-btn-highlight: rgba(48,107,179,1);
+        
+        -fh-item-outline: rgba(200,200,200,1);
     }
     
     @media (prefers-color-scheme: dark) {
@@ -84,10 +86,12 @@
             
             --fh-main-background: rgba(4,2,1,1);
             
-            --fh-std-shadow: rgba(255,255,255,0.3);
+            --fh-std-shadow: rgba(70,98,136,0.3);
             
             --fh-btn-background: rgba(66,147,247,1);
             --fh-btn-highlight: rgba(48,107,179,1);
+            
+            -fh-item-outline: rgba(85,85,85,1);
         }
     }
 
