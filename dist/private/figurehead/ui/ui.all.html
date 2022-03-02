@@ -52,6 +52,7 @@
 #define FWHITE() color:VAR(fwhite);
 #define FDARKGREY() color:VAR(fdarkgrey);
 #define FGREY() color:VAR(fgrey);
+#define FLIGHTGREY() color:VAR(flightgrey);
 #define FBLACK() color:VAR(fblack);
 #define FRED() color:VAR(fred);
 #define FGREEN() color:VAR(fgreen);
@@ -63,6 +64,7 @@
 #define WHITE() background:VAR(white);
 #define DARKGREY() background:VAR(darkgrey);
 #define GREY() background:VAR(grey);
+#define LIGHTGREY() background:VAR(lightgrey);
 #define BLACK() background:VAR(black);
 #define RED() background:VAR(red);
 #define GREEN() background:VAR(green);
@@ -74,6 +76,7 @@
 #define DWHITE() background:VAR(dwhite);
 #define DDARKGREY() background:VAR(ddarkgrey);
 #define DGREY() background:VAR(dgrey);
+#define DLIGHTGREY() background:VAR(dlightgrey);
 #define DBLACK() background:VAR(dblack);
 #define DRED() background:VAR(dred);
 #define DGREEN() background:VAR(dgreen);
@@ -121,6 +124,9 @@
 
 #define RADIUS(X) border-radius:X##rem;
 #define PCTRADIUS(X) border-radius:X%;
+
+#define COLOR_VAR(X) color:X;
+#define BACKGROUND_VAR(X) background:X;
 
 #define COLOR(RED,GREEN,BLUE,ALPHA) color:rgba(RED,GREEN,BLUE,ALPHA);
 #define BACKGROUND(RED,GREEN,BLUE,ALPHA) background:rgba(RED,GREEN,BLUE,ALPHA);

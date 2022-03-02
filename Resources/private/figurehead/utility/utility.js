@@ -2,6 +2,19 @@
 
 #include <./defines.js>
 
+function isDarkMode() {
+    if (window.matchMedia &&  window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return true;
+    }
+    return false;
+}
+
+function watchDarkMode(callback) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        callback(event.matches);
+    });
+}
+
 function print(s) {
     console.log(s);
 }
