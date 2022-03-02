@@ -86,7 +86,7 @@
 
 #define ERRORRED() VAR(error-red)
 
-#define MAIN_BACKGROUND() background:VAR(main-background)
+#define MAIN_BACKGROUND() background:VAR(main-background);
 
 #define HEADER2(CONTENT) ELEMENT(ROBOTO(2.2)FBLACK(),CONTENT)
 #define HEADER(CONTENT) ELEMENT(ROBOTO(1.2)FBLACK(),CONTENT)
@@ -220,6 +220,7 @@
 #define NOGROW() flex: 0 0 auto;
 #define SHRINK() flex: 0 1 auto;
 #define FILL() width:100%;height:100%;
+#define OFFSETFILL(TOP,LEFT,BOTTOM,RIGHT) top:TOP##rem;left:LEFT##rem;bottom:BOTTOM##rem;right:RIGHT##rem;
 #define PCTFLEXBASIS(V) flex-basis:V%;
 #define FLEXBASIS(V) flex-basis:V##rem;
 
