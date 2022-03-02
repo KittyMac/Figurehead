@@ -160,21 +160,6 @@ function distanceSq(p0, p1) {
     return (p1.x - p0.x) * (p1.x - p0.x) + (p1.y - p0.y) * (p1.y - p0.y);
 }
 
-function extractTitleFromMarkdown(markdown) {
-    var titleRegex = /#+(.*)/;
-    var results = markdown.match(titleRegex);
-    var title = "Untitled";
-    if (results != undefined && results.length >= 2) {
-        title = results[1];
-        markdown = markdown.replace(titleRegex, "");
-    }
-    return [title, markdown];
-}
-
-function isSmallScreen() {
-    return window.innerHeight < (emToPxValue * 24 * 2);
-}
-
 function allElementsFromPoint(x, y) {
     // https://stackoverflow.com/questions/8813051/determine-which-element-the-mouse-pointer-is-on-top-of-in-javascript
     var element, elements = [];
