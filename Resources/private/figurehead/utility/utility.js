@@ -145,12 +145,15 @@ function runAllScriptsIn(div) {
 }
 
 
-function prettyDate(time){
+function prettyDate(time, natural=true){
+    if (natural == false) {
+        return new Date(time).toLocaleDateString("en-US");
+    }
+    
     let diff = (new Date() - new Date(time)) / 1000;
     let day_diff = Math.floor(diff / (60 * 60 * 24));
         
 	if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 ) {
-        // https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
         return new Date(time).toLocaleDateString("en-US");
 	}
 			
