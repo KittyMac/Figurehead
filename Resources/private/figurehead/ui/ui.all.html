@@ -278,8 +278,8 @@
 
 #define DISABLED() cursor:not-allowed;IGNOREMOUSE()ALPHA(0.3)
 
-#define VGRADIENT(R1,G1,B1,A1,R2,G2,B2,A2) background:linear-gradient(to bottom, rgba(R1,G1,B1,A1), rgba(R2,G2,B2,A2))
-#define HGRADIENT(R1,G1,B1,A1,R2,G2,B2,A2) background:linear-gradient(to right, rgba(R1,G1,B1,A1), rgba(R2,G2,B2,A2))
+#define VGRADIENT(R1,G1,B1,A1,R2,G2,B2,A2) background:linear-gradient(to bottom, rgba(R1,G1,B1,A1), rgba(R2,G2,B2,A2));
+#define HGRADIENT(R1,G1,B1,A1,R2,G2,B2,A2) background:linear-gradient(to right, rgba(R1,G1,B1,A1), rgba(R2,G2,B2,A2));
 
 #define BOTTOMSHADOW() SHADOW(0,0.5,0.5,0.1,VAR(std-shadow))
 #define STDSHADOW() SHADOW(0,0.5,2.0,0.1,VAR(std-shadow))
