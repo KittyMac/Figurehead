@@ -233,8 +233,12 @@
 #define FLEXBASIS(V) flex-basis:V##rem;
 
 #define SCROLLING() overflow:auto;
-#define HSCROLLING() overflow-x:scroll;overflow-y:hidden;
-#define VSCROLLING() overflow-y:scroll;overflow-x:hidden;
+#define HSCROLLING() overflow-x:auto;overflow-y:hidden;
+#define VSCROLLING() overflow-y:auto;overflow-x:hidden;
+
+#define SCROLLING_ALWAYS() overflow:scroll;
+#define HSCROLLING_ALWAYS() overflow-x:scroll;overflow-y:hidden;
+#define VSCROLLING_ALWAYS() overflow-y:scroll;overflow-x:hidden;
 
 #define CLIPS() overflow:hidden;
 
