@@ -42,6 +42,9 @@
  * 
  */
 
+Laba = {};
+Laba.kDefaultDuration = 0.57;
+
 function StringBuilder()
 {
 	var strings = [];
@@ -1100,7 +1103,7 @@ class _Laba {
 
 		this.kMaxPipes = 40;
 		this.kMaxActions = 40;
-		this.kDefaultDuration = 0.57;
+		this.kDefaultDuration = Laba.kDefaultDuration;
 		this.kTimeScale = 1.0;
 		
 		let LabaDefaultValueFinal = this.LabaDefaultValue
