@@ -48,6 +48,7 @@ function handleAlertsQueue() {
     var openAlert = function (alert) {
         var askValue = alert.value;
         var ask = alert.ask;
+        var password = alert.password;
         var message = alert.message;
         var buttons = alert.buttons;
         var callbacks = alert.callbacks;
@@ -67,7 +68,11 @@ function handleAlertsQueue() {
         var alertHtml = "";
         
         if (ask) {
-            alertHtml = `ASK(${uniqueID},${message},${buttonsHtml})`;
+            if (password) {
+                alertHtml = `ASK_PASSWORD(${uniqueID},${message},${buttonsHtml})`;
+            } else {
+                alertHtml = `ASK(${uniqueID},${message},${buttonsHtml})`;
+            }
         } else {
             alertHtml = `ALERT(${uniqueID},${message},${buttonsHtml})`;
         }
@@ -179,6 +184,36 @@ function ask(message, value, buttons, callbacks) {
     alertsQueue.push({
         value: value,
         ask:true,
+        message:message,
+        buttons:buttons,
+        callbacks:callbacks,
+    })
+    
+    handleAlertsQueue();
+}
+
+function askPassword(message, value, buttons, callbacks) {
+    if UNDEFINED(message) {
+        return;
+    }
+    
+    if UNDEFINED(alertsContainer.isOpen) {
+        alertsContainer.isOpen = false;
+    }
+    
+    if UNDEFINED(buttons) {
+        buttons = ["Ok"];
+    }
+    if UNDEFINED(callbacks) {
+        callbacks = [undefined];
+    }
+    
+    message = message.replaceAll("\n", "<br>");
+    
+    alertsQueue.push({
+        value: value,
+        ask:true,
+        password:true,
         message:message,
         buttons:buttons,
         callbacks:callbacks,
