@@ -1,10 +1,10 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.6
 import PackageDescription
 
 let package = Package(
     name: "Figurehead",
     products: [
-        .executable(name: "Figurehead", targets: ["Figurehead"]),
+        .library(name: "Figurehead", targets: ["Figurehead"]),
     ],
     targets: [
         .target(
