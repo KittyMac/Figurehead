@@ -20,11 +20,15 @@ function print(s) {
 }
 
 function hide(div) {
-    div.style.display = "none";
+	if (div.style.display != "none") {
+		div.style.display = "none";
+	}
 }
 
 function show(div) {
-    div.style.display = "flex";
+	if (div.style.display != "flex") {
+		div.style.display = "flex";
+	}
 }
 
 function hashCode(s){
