@@ -490,6 +490,23 @@ class _LabaAction {
 	}
 }
 
+let _LabalIsDrawing = undefined;
+
+function _LabaDraw() {
+	_LabalIsDrawing = undefined;
+    for (var i in _allLabalTimers) {
+        _allLabalTimers[i].update()
+    }
+	if (_allLabalTimers.length > 0) {
+		_LabalIsDrawing = window.requestAnimationFrame(_LabaDraw);
+	}
+}
+
+function _LabaIsDirty() {
+	if (_LabalIsDrawing == undefined) {
+		_LabalIsDrawing = window.requestAnimationFrame(_LabaDraw);
+	}
+}
 
 class _Laba {
 	
@@ -503,14 +520,7 @@ class _Laba {
     isNumber(c) {
         return (c == '+' || c == '-' || c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '.');
     }
-	
-    update() {
-        // called by the pixijs update loops
-        for (var i in _allLabalTimers) {
-            _allLabalTimers[i].update()
-        }
-    }
-	
+		
 	parseAnimationString(elem, charString) {
 		var idx = 0;
 
@@ -780,6 +790,8 @@ class _Laba {
 			}
 
 		}
+		
+		_LabaIsDirty();
 	}
 	
 	reset(elem) {
@@ -873,6 +885,8 @@ class _Laba {
 			this.animateOne (elem, animationString, onUpdate, onComplete);
 			onComplete = undefined;
 		}
+		
+		_LabaIsDirty();
 	}
 	
 	
