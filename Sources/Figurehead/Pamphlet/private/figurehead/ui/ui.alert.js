@@ -48,6 +48,7 @@ function handleAlertsQueue() {
     var openAlert = function (alert) {
         var askValue = alert.value;
         var ask = alert.ask;
+		var login = alert.login;
         var password = alert.password;
         var message = alert.message;
         var buttons = alert.buttons;
@@ -68,7 +69,9 @@ function handleAlertsQueue() {
         var alertHtml = "";
         
         if (ask) {
-            if (password) {
+			if (login) {
+				alertHtml = `ASK_LOGIN(${uniqueID},${message},${buttonsHtml})`;
+            } else if (password) {
                 alertHtml = `ASK_PASSWORD(${uniqueID},${message},${buttonsHtml})`;
             } else {
                 alertHtml = `ASK(${uniqueID},${message},${buttonsHtml})`;
@@ -95,6 +98,9 @@ function handleAlertsQueue() {
             input.value = askValue;
             input.focus();
         }
+		
+		var inputAccount = document.getElementById(uniqueID + "Account");
+		var inputPassword = document.getElementById(uniqueID + "Password");
         
         for (var idx = callbacks.length-1; idx >= 0; idx -= 1) {
             var button0 = document.getElementById(uniqueID + "Btn" + idx);
@@ -104,6 +110,12 @@ function handleAlertsQueue() {
                 if EXISTS(input) {
                     value = input.value;
                 }
+				if (EXISTS(inputAccount) && EXISTS(inputPassword)) {
+					value = {
+						account: inputAccount.value,
+						password: inputPassword.value
+					};
+				}
                 if EXISTS(evt.currentTarget.callback) {
                     evt.currentTarget.callback(value);
                 }
@@ -214,6 +226,36 @@ function askPassword(message, value, buttons, callbacks) {
         value: value,
         ask:true,
         password:true,
+        message:message,
+        buttons:buttons,
+        callbacks:callbacks,
+    })
+    
+    handleAlertsQueue();
+}
+
+function askLogin(message, buttons, callbacks) {
+    if UNDEFINED(message) {
+        return;
+    }
+    
+    if UNDEFINED(alertsContainer.isOpen) {
+        alertsContainer.isOpen = false;
+    }
+    
+    if UNDEFINED(buttons) {
+        buttons = ["Ok"];
+    }
+    if UNDEFINED(callbacks) {
+        callbacks = [undefined];
+    }
+    
+    message = message.replaceAll("\n", "<br>");
+    
+    alertsQueue.push({
+        value: "",
+        ask:true,
+		login:true,
         message:message,
         buttons:buttons,
         callbacks:callbacks,
