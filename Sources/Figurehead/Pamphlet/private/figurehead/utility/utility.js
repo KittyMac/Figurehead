@@ -148,9 +148,17 @@ function runAllScriptsIn(div) {
     }
 }
 
+function toLocaleUTCDateString(date, locales, options) {
+    const timeDiff = date.getTimezoneOffset() * 60000;
+    const adjustedDate = new Date(date.valueOf() + timeDiff);
+    return adjustedDate.toLocaleDateString(locales, options);
+}
 
-function prettyDate(time, natural=true){
+function prettyDate(time, natural=true, utc=false) {
     if (natural == false) {
+        if (utc) {
+            return toLocaleUTCDateString(new Date(time), "en-US");
+        }
         return new Date(time).toLocaleDateString("en-US");
     }
     
@@ -158,6 +166,9 @@ function prettyDate(time, natural=true){
     let day_diff = Math.floor(diff / (60 * 60 * 24));
         
 	if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 ) {
+        if (utc) {
+            return toLocaleUTCDateString(new Date(time), "en-US");
+        }
         return new Date(time).toLocaleDateString("en-US");
 	}
 			
