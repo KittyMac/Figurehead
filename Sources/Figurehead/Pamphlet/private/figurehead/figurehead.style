@@ -1,6 +1,6 @@
 #define PAMPHLET_PREPROCESSOR
 
-<style>
+<style nonce="SESSION_UUID">
     :root {
         --fh-link: rgba(55, 64, 255);
                 
