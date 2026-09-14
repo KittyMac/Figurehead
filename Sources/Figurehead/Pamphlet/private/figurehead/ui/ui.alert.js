@@ -50,6 +50,7 @@ function handleAlertsQueue() {
         var ask = alert.ask;
 		var login = alert.login;
         var password = alert.password;
+        var autocomplete = alert.autocomplete;
         var message = alert.message;
         var buttons = alert.buttons;
         var callbacks = alert.callbacks;
@@ -84,6 +85,9 @@ function handleAlertsQueue() {
         
         var input = document.getElementById(uniqueID + "Value");
         if EXISTS(input) {
+            if (autocomplete) {
+                input.autocomplete = autocomplete;
+            }
             input.callback = callbacks[callbacks.length-1];
             textFieldOnEnter(input, function() {
                 let value = undefined;
