@@ -28,7 +28,7 @@ function sendIfModified(command, ifModifiedString, blocking, callback) {
         xhttp.setRequestHeader("Session-Id", sessionId);
     }
     
-    xhttp.setRequestHeader("Flynn-Tag", "hotload");
+    xhttp.setRequestHeader("Tag", "hotload");
     xhttp.setRequestHeader("Pragma", "no-cache");
     xhttp.setRequestHeader("Expires", "-1");
     xhttp.setRequestHeader("Cache-Control", "no-cache");
